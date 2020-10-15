@@ -159,7 +159,7 @@ namespace AutoMapper.QueryableExtensions.Impl
                         return result;
                         ExpressionResolutionResult MapFromExpression(LambdaExpression mapFrom)
                         {
-                            if (!mapFrom.Body.IsSubQuery() || letPropertyMaps.ConfigurationProvider.ResolveTypeMap(memberMap.SourceType, memberMap.DestinationType) == null)
+                            if (!mapFrom.Body.IsQuery() || letPropertyMaps.ConfigurationProvider.ResolveTypeMap(memberMap.SourceType, memberMap.DestinationType) == null)
                             {
                                 return new ExpressionResolutionResult(mapFrom.ReplaceParameters(CheckCustomSource()));
                             }
